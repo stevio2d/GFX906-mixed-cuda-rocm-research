@@ -5,6 +5,7 @@ Curated handoff repo for the MiniMax-M2.7 mixed NVIDIA + AMD llama.cpp research 
 This repo is not a clean product branch. It is a research package for continuing the work with:
 
 - the final report
+- the release note
 - the external-AI handoff prompt
 - the exact best commands
 - selected benchmark artifacts
@@ -19,6 +20,7 @@ This repo is not a clean product branch. It is a research package for continuing
 
 Authoritative summary docs:
 
+- [RELEASE_NOTES.md](RELEASE_NOTES.md)
 - [docs/minimax-optimization-report.md](docs/minimax-optimization-report.md)
 - [docs/minimax-external-ai-prompt.md](docs/minimax-external-ai-prompt.md)
 - [docs/plan-cuda+8channelram.md](docs/plan-cuda+8channelram.md)
