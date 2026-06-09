@@ -1,0 +1,2 @@
+source_repo_origin=https://github.com/skyne98/llama.cpp-gfx906.git
+source_repo_head=1acee6bf8939948f9bcbf4b14034e4b475f06069

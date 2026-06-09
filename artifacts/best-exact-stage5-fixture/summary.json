@@ -1,0 +1,26 @@
+{
+  "results_tsv": "/home/stefan/llama.cpp-gfx906/bench-results/minimax-stage5-l2526-leafonly-ub832-cache4-exact-20260608T023426Z/results.tsv",
+  "server_log": "/home/stefan/llama.cpp-gfx906/bench-results/minimax-stage5-l2526-leafonly-ub832-cache4-exact-20260608T023426Z/server.log",
+  "turns_ok": 4,
+  "primary_cached_turns": 3,
+  "max_context_tokens": 9497,
+  "ctx_limit": 69376,
+  "ctx_fill_ratio": 0.1368917204797048,
+  "aggregate_cached_turns": {
+    "cache_tokens": 19602,
+    "processed_prompt_tokens": 4422,
+    "predicted_tokens": 24,
+    "cache_ratio": 0.8159340659340659,
+    "processed_pp": 386.3150471720201,
+    "effective_context_pp": 2098.7862264270943,
+    "tg": 36.803493878352185,
+    "prompt_ms": 11446.616,
+    "predicted_ms": 652.112
+  },
+  "reuse_log_evidence": {
+    "f_keep_sim_pairs": [],
+    "prompt_cache_saves": 0,
+    "prompt_cache_load_or_better_prompt_events": 0,
+    "checkpoint_restores": 0
+  }
+}

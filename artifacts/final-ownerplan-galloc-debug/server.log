@@ -1,0 +1,161 @@
+0.00.814.082 W /proc/sys/kernel/numa_balancing is enabled, this has been observed to impair performance
+0.00.814.090 I log_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.814.090 I device_info:
+0.00.938.435 I   - CUDA0   : NVIDIA GeForce RTX 3090 (24123 MiB, 23857 MiB free)
+0.01.066.823 I   - CUDA1   : NVIDIA GeForce RTX 3090 (24123 MiB, 23857 MiB free)
+0.01.167.350 I   - CUDA2   : NVIDIA GeForce RTX 5070 Ti (15880 MiB, 15647 MiB free)
+0.01.266.516 I   - CUDA3   : NVIDIA GeForce RTX 5070 Ti (15880 MiB, 15647 MiB free)
+0.01.266.566 I   - ROCm0   : AMD Instinct MI50/MI60 (32752 MiB, 32722 MiB free)
+0.01.266.576 I   - ROCm1   : AMD Radeon Graphics (32752 MiB, 32722 MiB free)
+0.01.266.582 I   - CPU     : AMD EPYC 7532 32-Core Processor (257844 MiB, 257844 MiB free)
+0.01.266.659 I system_info: n_threads = 24 (n_threads_batch = 48) / 64 | CUDA : ARCHS = 860,890,900 | PEER_MAX_BATCH_SIZE = 128 | ROCm : NO_VMM = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.01.266.798 I srv          init: using 63 threads for HTTP server
+0.01.266.937 I srv         start: binding port with default address family
+0.01.268.173 I srv  llama_server: loading model
+0.01.268.181 I srv    load_model: loading model '/home/stefan/.lmstudio/models/unsloth/MiniMax-M2.7-GGUF/MiniMax-M2.7-UD-Q4_K_S-00001-of-00004.gguf'
+0.01.268.232 I common_apply_cuda_fattn_env: GGML_CUDA_FATTN_NO_STREAM_K=1
+0.01.268.234 I common_apply_cuda_fattn_env: GGML_CUDA_FATTN_VEC_QKV_HEADROOM_MIB=0
+0.01.268.237 I common_apply_cuda_fattn_env: GGML_CUDA_FATTN_MMA_Q4_0_DIRECT=1
+0.01.268.238 I common_apply_cuda_fattn_env: GGML_CUDA_FATTN_MMA_Q4_0_DIRECT_MODE=all
+0.01.556.501 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.659.054 W load_tensors: --device-speed is ignored unless --placement-policy balanced or graph is used
+load_tensors: layer placement summary (n_ctx = 69376, cache_k = q4_0, cache_v = q4_0)
+load_tensors:   #0 ROCm1    backend=ROCm     layers= 14 output=no weights=27883.47 MiB kv_est= 1067.06 MiB free=32722 MiB total=32752 MiB
+load_tensors:   #1 ROCm0    backend=ROCm     layers= 12 output=no weights=23900.12 MiB kv_est=  914.62 MiB free=32722 MiB total=32752 MiB
+load_tensors:   #2 CUDA3    backend=CUDA     layers=  7 output=yes weights=14422.55 MiB kv_est=  533.53 MiB free=15647 MiB total=15880 MiB
+load_tensors:   #3 CUDA1    backend=CUDA     layers= 11 output=no weights=21908.44 MiB kv_est=  838.41 MiB free=23857 MiB total=24123 MiB
+load_tensors:   #4 CUDA0    backend=CUDA     layers= 11 output=no weights=21908.44 MiB kv_est=  838.41 MiB free=23857 MiB total=24123 MiB
+load_tensors:   #5 CUDA2    backend=CUDA     layers=  7 output=no weights=14238.74 MiB kv_est=  533.53 MiB free=15647 MiB total=15880 MiB
+load_tensors:   CPU         backend=CPU      layers=  0 output=no weights=  622.76 MiB kv_est=    0.00 MiB free=257844 MiB total=257844 MiB
+0.15.028.663 W llama_context: n_ctx_seq (69376) < n_ctx_train (196608) -- the full capacity of the model will not be utilized
+0.15.028.773 W llama_context: EXPERIMENTAL MiniMax-M2 shared prompt-attention owner plan = CUDA0/CUDA
+0.15.028.774 W llama_context: EXPERIMENTAL MiniMax-M2 FA graph override backends = CUDA0/CUDA
+0.15.028.775 W llama_context: EXPERIMENTAL MiniMax-M2 FA graph override limited to 2 explicit layer(s)
+0.15.028.776 W llama_context: EXPERIMENTAL MiniMax-M2 reserve-time checks will treat the shared prompt-attention owner plan as the prompt owner when applicable
+0.15.028.777 W llama_context: EXPERIMENTAL MiniMax-M2 FA graph route disabled via LLAMA_MINIMAX_FATTN_ROUTE_DISABLE=1
+0.15.028.778 W llama_context: EXPERIMENTAL MiniMax-M2 execution-owner override enabled via LLAMA_MINIMAX_EXEC_LAYER_OWNER=1
+0.15.185.176 W sched_reserve: EXPERIMENTAL reserving pp graph with n_outputs = 1 via --reserve-pp-outputs (default would be 800)
+0.15.185.181 W sched_reserve: reserve-debug enabled via LLAMA_RESERVE_DEBUG_SIZES
+0.15.208.340 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[0]=ROCm1 chunks=1 cur_size=0 new_size=1186183680 realloc=1
+0.15.208.348 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[0] chunk[0] size=1186183680
+0.15.208.349 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[1]=ROCm0 chunks=1 cur_size=0 new_size=680327680 realloc=1
+0.15.208.349 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[1] chunk[0] size=680327680
+0.15.208.350 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[2]=CUDA3 chunks=1 cur_size=0 new_size=680376832 realloc=1
+0.15.208.353 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[2] chunk[0] size=680376832
+0.15.208.353 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[3]=CUDA1 chunks=1 cur_size=0 new_size=680327680 realloc=1
+0.15.208.354 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[3] chunk[0] size=680327680
+0.15.208.355 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[4]=CUDA0 chunks=1 cur_size=0 new_size=680327680 realloc=1
+0.15.208.355 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[4] chunk[0] size=680327680
+0.15.208.356 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[5]=CUDA2 chunks=1 cur_size=0 new_size=680328192 realloc=1
+0.15.208.356 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[5] chunk[0] size=680328192
+0.15.208.357 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[6]=ROCm_Host chunks=1 cur_size=0 new_size=908078208 realloc=1
+0.15.208.358 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[6] chunk[0] size=908078208
+0.15.208.374 W operator(): reserve-debug pp-measure graph nodes = 4719, splits = 8, n_tokens = 800, n_seqs = 1, n_outputs = 1
+0.15.208.382 W operator(): reserve-debug pp-measure backend[0] ROCm1 / ROCm1 =  1131.23 MiB
+0.15.208.383 W operator(): reserve-debug pp-measure backend[1] ROCm0 / ROCm0 =   648.81 MiB
+0.15.208.384 W operator(): reserve-debug pp-measure backend[2] CUDA3 / CUDA3 =   648.86 MiB
+0.15.208.384 W operator(): reserve-debug pp-measure backend[3] CUDA1 / CUDA1 =   648.81 MiB
+0.15.208.385 W operator(): reserve-debug pp-measure backend[4] CUDA0 / CUDA0 =   648.81 MiB
+0.15.208.387 W operator(): reserve-debug pp-measure backend[5] CUDA2 / CUDA2 =   648.81 MiB
+0.15.208.389 W operator(): reserve-debug pp-measure backend[6] CPU / ROCm_Host =   866.01 MiB
+0.15.212.073 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[0]=ROCm1 chunks=1 cur_size=0 new_size=1186183680 realloc=1
+0.15.212.075 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[0] chunk[0] size=1186183680
+0.15.212.211 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[1]=ROCm0 chunks=1 cur_size=0 new_size=876935680 realloc=1
+0.15.212.214 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[1] chunk[0] size=876935680
+0.15.212.427 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[2]=CUDA3 chunks=1 cur_size=0 new_size=641055232 realloc=1
+0.15.212.429 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[2] chunk[0] size=641055232
+0.15.212.723 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[3]=CUDA1 chunks=1 cur_size=0 new_size=641006080 realloc=1
+0.15.212.726 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[3] chunk[0] size=641006080
+0.15.212.893 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[4]=CUDA0 chunks=1 cur_size=0 new_size=9483211264 realloc=1
+0.15.212.895 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[4] chunk[0] size=9483211264
+0.15.213.068 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 9043.90 MiB on device 0: cudaMalloc failed: out of memory
+0.15.213.073 E ggml_gallocr_reserve_n_impl: failed to allocate CUDA0 buffer of size 9483211264
+0.15.213.073 E graph_reserve: failed to allocate compute buffers
+0.15.213.081 W sched_reserve: compute buffer allocation failed, retrying without pipeline parallelism
+0.15.217.841 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[0]=ROCm1 chunks=1 cur_size=0 new_size=372424320 realloc=1
+0.15.217.844 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[0] chunk[0] size=372424320
+0.15.217.918 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[1]=ROCm0 chunks=1 cur_size=0 new_size=268385920 realloc=1
+0.15.217.922 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[1] chunk[0] size=268385920
+0.15.218.092 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[2]=CUDA3 chunks=1 cur_size=0 new_size=268385920 realloc=1
+0.15.218.094 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[2] chunk[0] size=268385920
+0.15.218.398 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[3]=CUDA1 chunks=1 cur_size=0 new_size=268385920 realloc=1
+0.15.218.401 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[3] chunk[0] size=268385920
+0.15.218.596 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[4]=CUDA0 chunks=1 cur_size=0 new_size=939306624 realloc=1
+0.15.218.598 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[4] chunk[0] size=939306624
+0.15.218.749 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[5]=CUDA2 chunks=1 cur_size=0 new_size=268386048 realloc=1
+0.15.218.751 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[5] chunk[0] size=268386048
+0.15.218.873 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[6]=ROCm_Host chunks=1 cur_size=0 new_size=241765152 realloc=1
+0.15.218.875 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[6] chunk[0] size=241765152
+0.15.309.861 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[0]=ROCm1 chunks=1 cur_size=372424320 new_size=547712 realloc=0
+0.15.309.869 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[0] chunk[0] size=547712
+0.15.309.870 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[1]=ROCm0 chunks=1 cur_size=268385920 new_size=396160 realloc=0
+0.15.309.871 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[1] chunk[0] size=396160
+0.15.309.871 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[2]=CUDA3 chunks=1 cur_size=268385920 new_size=812544 realloc=0
+0.15.309.872 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[2] chunk[0] size=812544
+0.15.309.873 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[3]=CUDA1 chunks=1 cur_size=268385920 new_size=396160 realloc=0
+0.15.309.873 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[3] chunk[0] size=396160
+0.15.309.874 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[4]=CUDA0 chunks=1 cur_size=939306624 new_size=396160 realloc=0
+0.15.309.875 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[4] chunk[0] size=396160
+0.15.309.875 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[5]=CUDA2 chunks=1 cur_size=268386048 new_size=396288 realloc=0
+0.15.309.876 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[5] chunk[0] size=396288
+0.15.309.878 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[6]=ROCm_Host chunks=1 cur_size=241765152 new_size=384160 realloc=0
+0.15.309.878 W ggml_gallocr_reserve_n_impl: mode=measure graph_uid=0 buffer[6] chunk[0] size=384160
+0.15.309.886 W operator(): reserve-debug tg-measure graph nodes = 4719, splits = 8, n_tokens = 1, n_seqs = 1, n_outputs = 1
+0.15.309.892 W operator(): reserve-debug tg-measure backend[0] ROCm1 / ROCm1 =     0.52 MiB
+0.15.309.893 W operator(): reserve-debug tg-measure backend[1] ROCm0 / ROCm0 =     0.38 MiB
+0.15.309.893 W operator(): reserve-debug tg-measure backend[2] CUDA3 / CUDA3 =     0.77 MiB
+0.15.309.894 W operator(): reserve-debug tg-measure backend[3] CUDA1 / CUDA1 =     0.38 MiB
+0.15.309.895 W operator(): reserve-debug tg-measure backend[4] CUDA0 / CUDA0 =     0.38 MiB
+0.15.309.895 W operator(): reserve-debug tg-measure backend[5] CUDA2 / CUDA2 =     0.38 MiB
+0.15.309.896 W operator(): reserve-debug tg-measure backend[6] CPU / ROCm_Host =     0.37 MiB
+0.15.313.415 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[0]=ROCm1 chunks=1 cur_size=372424320 new_size=547712 realloc=0
+0.15.313.418 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[0] chunk[0] size=547712
+0.15.313.419 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[1]=ROCm0 chunks=1 cur_size=268385920 new_size=417664 realloc=0
+0.15.313.420 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[1] chunk[0] size=417664
+0.15.313.420 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[2]=CUDA3 chunks=1 cur_size=268385920 new_size=812544 realloc=0
+0.15.313.421 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[2] chunk[0] size=812544
+0.15.313.422 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[3]=CUDA1 chunks=1 cur_size=268385920 new_size=417664 realloc=0
+0.15.313.422 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[3] chunk[0] size=417664
+0.15.313.425 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[4]=CUDA0 chunks=1 cur_size=939306624 new_size=417664 realloc=0
+0.15.313.427 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[4] chunk[0] size=417664
+0.15.313.427 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[5]=CUDA2 chunks=1 cur_size=268386048 new_size=417792 realloc=0
+0.15.313.428 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[5] chunk[0] size=417792
+0.15.313.429 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[6]=ROCm_Host chunks=1 cur_size=241765152 new_size=384160 realloc=0
+0.15.313.430 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[6] chunk[0] size=384160
+0.15.316.774 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[0]=ROCm1 chunks=1 cur_size=372424320 new_size=372424320 realloc=0
+0.15.316.777 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[0] chunk[0] size=372424320
+0.15.316.778 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[1]=ROCm0 chunks=1 cur_size=268385920 new_size=268385920 realloc=0
+0.15.316.778 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[1] chunk[0] size=268385920
+0.15.316.779 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[2]=CUDA3 chunks=1 cur_size=268385920 new_size=268385920 realloc=0
+0.15.316.780 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[2] chunk[0] size=268385920
+0.15.316.780 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[3]=CUDA1 chunks=1 cur_size=268385920 new_size=268385920 realloc=0
+0.15.316.781 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[3] chunk[0] size=268385920
+0.15.316.782 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[4]=CUDA0 chunks=1 cur_size=939306624 new_size=939306624 realloc=0
+0.15.316.784 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[4] chunk[0] size=939306624
+0.15.316.785 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[5]=CUDA2 chunks=1 cur_size=268386048 new_size=268386048 realloc=0
+0.15.316.785 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[5] chunk[0] size=268386048
+0.15.316.788 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[6]=ROCm_Host chunks=1 cur_size=241765152 new_size=241765152 realloc=0
+0.15.316.788 W ggml_gallocr_reserve_n_impl: mode=alloc graph_uid=0 buffer[6] chunk[0] size=241765152
+0.15.316.937 I srv    load_model: initializing slots, n_slots = 1
+0.17.222.876 W common_speculative_init: no implementations specified for speculative decoding
+0.17.222.887 I slot   load_model: id  0 | task -1 | new slot, n_ctx = 69376
+0.17.222.925 I srv    load_model: prompt cache is enabled, size limit: 32768 MiB
+0.17.222.926 I srv    load_model: use `--cache-ram 0` to disable the prompt cache
+0.17.222.926 I srv    load_model: for more info see https://github.com/ggml-org/llama.cpp/pull/16391
+0.17.222.978 W srv          init: --cache-idle-slots requires --kv-unified, disabling
+0.17.243.187 I init: chat template, example_format: ']~!b[]~b]system
+You are a helpful assistant[e~[
+]~b]user
+Hello[e~[
+]~b]ai
+Hi there[e~[
+]~b]user
+How are you?[e~[
+]~b]ai
+<think>
+'
+0.17.258.853 I srv          init: init: chat template, thinking = 1
+0.17.258.897 I srv  llama_server: model loaded
+0.17.258.902 I srv  llama_server: server is listening on http://127.0.0.1:22153
+0.17.258.910 I srv  update_slots: all slots are idle
+1.46.544.180 I srv    operator(): operator(): cleaning up before exit...

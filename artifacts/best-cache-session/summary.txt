@@ -1,0 +1,11 @@
+MiniMax cache-aware coding-session benchmark summary
+turns_ok: 2
+primary_cached_turns: 1
+max_context_tokens: 45811 / 69376 (0.660)
+cache_ratio_cached_turns: 0.753560
+processed_pp_cached_turns: 255.317006
+effective_context_pp_cached_turns: 1036.021386
+tg_cached_turns: 3.405396
+prompt_cache_saves: 0
+prompt_cache_load_or_better_prompt_events: 0
+checkpoint_restores: 0

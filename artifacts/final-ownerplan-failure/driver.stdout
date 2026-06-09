@@ -1,0 +1,15 @@
+[2026-06-09T02:10:42Z] turn 1 request
+turn 1 context_tokens=34450 cache_n=0 prompt_n=34354 processed_pp=228.094230
+stopping: processed_pp=228.094230 below PP_STOP_CUTOFF=300
+summary: /home/stefan/llama.cpp-gfx906/bench-results/minimax-stage5b0-ownerplan-runtime-cache-correct2-20260609T021024Z/summary.txt
+MiniMax cache-aware coding-session benchmark summary
+turns_ok: 1
+primary_cached_turns: 0
+max_context_tokens: 34450 / 69376 (0.497)
+cache_ratio_cached_turns: 0.000000
+processed_pp_cached_turns: 0.000000
+effective_context_pp_cached_turns: 0.000000
+tg_cached_turns: 0.000000
+prompt_cache_saves: 0
+prompt_cache_load_or_better_prompt_events: 0
+checkpoint_restores: 0

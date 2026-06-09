@@ -1,0 +1,113 @@
+0.00.876.160 W /proc/sys/kernel/numa_balancing is enabled, this has been observed to impair performance
+0.00.876.168 I log_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.876.168 I device_info:
+0.00.999.775 I   - CUDA0   : NVIDIA GeForce RTX 3090 (24123 MiB, 23857 MiB free)
+0.01.126.898 I   - CUDA1   : NVIDIA GeForce RTX 3090 (24123 MiB, 23857 MiB free)
+0.01.227.954 I   - CUDA2   : NVIDIA GeForce RTX 5070 Ti (15880 MiB, 15647 MiB free)
+0.01.326.884 I   - CUDA3   : NVIDIA GeForce RTX 5070 Ti (15880 MiB, 15647 MiB free)
+0.01.326.945 I   - ROCm0   : AMD Instinct MI50/MI60 (32752 MiB, 32722 MiB free)
+0.01.326.958 I   - ROCm1   : AMD Radeon Graphics (32752 MiB, 32722 MiB free)
+0.01.326.965 I   - CPU     : AMD EPYC 7532 32-Core Processor (257844 MiB, 257844 MiB free)
+0.01.327.044 I system_info: n_threads = 24 (n_threads_batch = 48) / 64 | CUDA : ARCHS = 860,890,900 | PEER_MAX_BATCH_SIZE = 128 | ROCm : NO_VMM = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.01.327.188 I srv          init: using 63 threads for HTTP server
+0.01.327.333 I srv         start: binding port with default address family
+0.01.328.559 I srv  llama_server: loading model
+0.01.328.565 I srv    load_model: loading model '/home/stefan/.lmstudio/models/unsloth/MiniMax-M2.7-GGUF/MiniMax-M2.7-UD-Q4_K_S-00001-of-00004.gguf'
+0.01.328.624 I common_apply_cuda_fattn_env: GGML_CUDA_FATTN_NO_STREAM_K=1
+0.01.328.628 I common_apply_cuda_fattn_env: GGML_CUDA_FATTN_VEC_QKV_HEADROOM_MIB=0
+0.01.328.630 I common_apply_cuda_fattn_env: GGML_CUDA_FATTN_MMA_Q4_0_DIRECT=1
+0.01.328.631 I common_apply_cuda_fattn_env: GGML_CUDA_FATTN_MMA_Q4_0_DIRECT_MODE=all
+0.01.622.514 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.01.729.105 W load_tensors: --device-speed is ignored unless --placement-policy balanced or graph is used
+load_tensors: layer placement summary (n_ctx = 69376, cache_k = q4_0, cache_v = q4_0)
+load_tensors:   #0 ROCm1    backend=ROCm     layers= 14 output=no weights=27883.47 MiB kv_est= 1067.06 MiB free=32722 MiB total=32752 MiB
+load_tensors:   #1 ROCm0    backend=ROCm     layers= 12 output=no weights=23900.12 MiB kv_est=  914.62 MiB free=32722 MiB total=32752 MiB
+load_tensors:   #2 CUDA3    backend=CUDA     layers=  7 output=yes weights=14422.55 MiB kv_est=  533.53 MiB free=15647 MiB total=15880 MiB
+load_tensors:   #3 CUDA1    backend=CUDA     layers= 11 output=no weights=21908.44 MiB kv_est=  838.41 MiB free=23857 MiB total=24123 MiB
+load_tensors:   #4 CUDA0    backend=CUDA     layers= 11 output=no weights=21908.44 MiB kv_est=  838.41 MiB free=23857 MiB total=24123 MiB
+load_tensors:   #5 CUDA2    backend=CUDA     layers=  7 output=no weights=14238.74 MiB kv_est=  533.53 MiB free=15647 MiB total=15880 MiB
+load_tensors:   CPU         backend=CPU      layers=  0 output=no weights=  622.76 MiB kv_est=    0.00 MiB free=257844 MiB total=257844 MiB
+0.14.827.252 W llama_context: n_ctx_seq (69376) < n_ctx_train (196608) -- the full capacity of the model will not be utilized
+0.14.827.397 W llama_context: EXPERIMENTAL MiniMax-M2 shared prompt-attention owner plan = CUDA0/CUDA
+0.14.827.400 W llama_context: EXPERIMENTAL MiniMax-M2 FA graph override backends = CUDA0/CUDA
+0.14.827.401 W llama_context: EXPERIMENTAL MiniMax-M2 FA graph override limited to 2 explicit layer(s)
+0.14.827.403 W llama_context: EXPERIMENTAL MiniMax-M2 reserve-time checks will treat the shared prompt-attention owner plan as the prompt owner when applicable
+0.14.827.404 W llama_context: EXPERIMENTAL MiniMax-M2 FA graph route disabled via LLAMA_MINIMAX_FATTN_ROUTE_DISABLE=1
+0.14.827.405 W llama_context: EXPERIMENTAL MiniMax-M2 execution-owner override enabled via LLAMA_MINIMAX_EXEC_LAYER_OWNER=1
+0.14.928.537 W sched_reserve: EXPERIMENTAL reserving pp graph with n_outputs = 1 via --reserve-pp-outputs (default would be 800)
+0.14.953.955 E ggml_backend_cuda_buffer_type_alloc_buffer: allocating 9043.90 MiB on device 0: cudaMalloc failed: out of memory
+0.14.953.965 E ggml_gallocr_reserve_n_impl: failed to allocate CUDA0 buffer of size 9483211264
+0.14.953.967 E graph_reserve: failed to allocate compute buffers
+0.14.953.976 W sched_reserve: compute buffer allocation failed, retrying without pipeline parallelism
+0.15.057.483 I srv    load_model: initializing slots, n_slots = 1
+0.16.927.116 W common_speculative_init: no implementations specified for speculative decoding
+0.16.927.144 I slot   load_model: id  0 | task -1 | new slot, n_ctx = 69376
+0.16.927.183 I srv    load_model: prompt cache is enabled, size limit: 32768 MiB
+0.16.927.184 I srv    load_model: use `--cache-ram 0` to disable the prompt cache
+0.16.927.184 I srv    load_model: for more info see https://github.com/ggml-org/llama.cpp/pull/16391
+0.16.927.246 W srv          init: --cache-idle-slots requires --kv-unified, disabling
+0.16.947.556 I init: chat template, example_format: ']~!b[]~b]system
+You are a helpful assistant[e~[
+]~b]user
+Hello[e~[
+]~b]ai
+Hi there[e~[
+]~b]user
+How are you?[e~[
+]~b]ai
+<think>
+'
+0.16.963.319 I srv          init: init: chat template, thinking = 1
+0.16.963.374 I srv  llama_server: model loaded
+0.16.963.383 I srv  llama_server: server is listening on http://127.0.0.1:22162
+0.16.963.392 I srv  update_slots: all slots are idle
+0.18.282.388 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.22.889.133 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   1600, progress = 0.05, t =   4.61 s / 347.32 tokens per second
+0.25.194.373 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   2400, progress = 0.07, t =   6.91 s / 347.22 tokens per second
+0.27.563.803 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   3200, progress = 0.09, t =   9.28 s / 344.78 tokens per second
+0.29.972.758 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   4000, progress = 0.12, t =  11.69 s / 342.16 tokens per second
+0.32.440.293 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   4800, progress = 0.14, t =  14.16 s / 339.03 tokens per second
+0.34.962.462 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   5600, progress = 0.16, t =  16.68 s / 335.73 tokens per second
+0.37.571.880 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   6400, progress = 0.19, t =  19.29 s / 331.79 tokens per second
+0.40.239.734 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   7200, progress = 0.21, t =  21.96 s / 327.91 tokens per second
+0.42.972.265 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   8000, progress = 0.23, t =  24.69 s / 324.02 tokens per second
+0.45.749.530 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   8800, progress = 0.26, t =  27.47 s / 320.38 tokens per second
+0.48.578.056 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   9600, progress = 0.28, t =  30.30 s / 316.88 tokens per second
+0.51.475.922 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  10400, progress = 0.30, t =  33.19 s / 313.31 tokens per second
+0.54.428.755 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  11200, progress = 0.33, t =  36.15 s / 309.85 tokens per second
+0.57.444.580 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  12000, progress = 0.35, t =  39.16 s / 306.42 tokens per second
+1.00.517.930 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  12800, progress = 0.37, t =  42.24 s / 303.06 tokens per second
+1.03.692.658 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  13600, progress = 0.40, t =  45.41 s / 299.49 tokens per second
+1.06.915.051 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  14400, progress = 0.42, t =  48.63 s / 296.10 tokens per second
+1.10.193.979 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  15200, progress = 0.44, t =  51.91 s / 292.81 tokens per second
+1.13.541.233 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  16000, progress = 0.47, t =  55.26 s / 289.55 tokens per second
+1.16.951.163 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  16800, progress = 0.49, t =  58.67 s / 286.35 tokens per second
+1.20.425.236 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  17600, progress = 0.51, t =  62.14 s / 283.22 tokens per second
+1.23.961.697 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  18400, progress = 0.54, t =  65.68 s / 280.15 tokens per second
+1.27.577.916 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  19200, progress = 0.56, t =  69.30 s / 277.07 tokens per second
+1.31.281.930 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  20000, progress = 0.58, t =  73.00 s / 273.97 tokens per second
+1.35.038.722 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  20800, progress = 0.61, t =  76.76 s / 270.99 tokens per second
+1.38.867.576 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  21600, progress = 0.63, t =  80.59 s / 268.04 tokens per second
+1.42.825.300 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  22400, progress = 0.65, t =  84.54 s / 264.95 tokens per second
+1.46.798.376 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  23200, progress = 0.68, t =  88.52 s / 262.10 tokens per second
+1.50.823.148 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  24000, progress = 0.70, t =  92.54 s / 259.35 tokens per second
+1.54.913.596 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  24800, progress = 0.72, t =  96.63 s / 256.65 tokens per second
+1.59.047.490 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  25600, progress = 0.75, t = 100.77 s / 254.06 tokens per second
+2.03.267.584 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  26400, progress = 0.77, t = 104.99 s / 251.46 tokens per second
+2.07.545.729 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  27200, progress = 0.79, t = 109.26 s / 248.94 tokens per second
+2.11.882.092 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  28000, progress = 0.82, t = 113.60 s / 246.48 tokens per second
+2.16.289.991 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  28800, progress = 0.84, t = 118.01 s / 244.05 tokens per second
+2.20.747.278 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  29600, progress = 0.86, t = 122.46 s / 241.70 tokens per second
+2.25.294.833 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  30400, progress = 0.88, t = 127.01 s / 239.35 tokens per second
+2.29.886.522 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  31200, progress = 0.91, t = 131.60 s / 237.07 tokens per second
+2.34.547.526 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  32000, progress = 0.93, t = 136.27 s / 234.84 tokens per second
+2.39.299.095 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  32800, progress = 0.95, t = 141.02 s / 232.60 tokens per second
+2.44.083.223 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =  33600, progress = 0.98, t = 145.80 s / 230.45 tokens per second
+2.54.231.372 I slot print_timing: id  0 | task 0 | prompt eval time =  150613.19 ms / 34354 tokens (    4.38 ms per token,   228.09 tokens per second)
+2.54.231.378 I slot print_timing: id  0 | task 0 |        eval time =    5335.74 ms /    96 tokens (   55.58 ms per token,    17.99 tokens per second)
+2.54.231.379 I slot print_timing: id  0 | task 0 |       total time =  155948.94 ms / 34450 tokens
+2.54.231.388 I slot print_timing: id  0 | task 0 |    graphs reused =         94
+2.54.232.607 I slot      release: id  0 | task 0 | stop processing: n_tokens = 34449, truncated = 0
+2.54.232.616 I srv  update_slots: all slots are idle
+2.54.246.963 I srv  update_slots: all slots are idle
+2.54.352.528 I srv    operator(): operator(): cleaning up before exit...

@@ -1,0 +1,601 @@
+System: You are an OpenCode coding assistant running inside llama.cpp. Answer with concise implementation guidance and patch-level reasoning.\n\nRepository context below is intentionally large and stable to test prompt-cache reuse.\n\n### Repository snapshot shard
+Path: src/session_orchestrator_0.ts
+```ts
+export type PendingEdit0 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit0(input: string): PendingEdit0 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_0.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 0`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_1.ts
+```ts
+export type PendingEdit1 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit1(input: string): PendingEdit1 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_1.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 1`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_2.ts
+```ts
+export type PendingEdit2 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit2(input: string): PendingEdit2 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_2.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 2`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_3.ts
+```ts
+export type PendingEdit3 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit3(input: string): PendingEdit3 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_3.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 3`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_4.ts
+```ts
+export type PendingEdit4 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit4(input: string): PendingEdit4 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_4.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 4`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_5.ts
+```ts
+export type PendingEdit5 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit5(input: string): PendingEdit5 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_5.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 5`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_6.ts
+```ts
+export type PendingEdit6 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit6(input: string): PendingEdit6 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_6.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 6`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_7.ts
+```ts
+export type PendingEdit7 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit7(input: string): PendingEdit7 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_7.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 7`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_8.ts
+```ts
+export type PendingEdit8 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit8(input: string): PendingEdit8 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_8.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 8`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_9.ts
+```ts
+export type PendingEdit9 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit9(input: string): PendingEdit9 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_9.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 9`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_10.ts
+```ts
+export type PendingEdit10 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit10(input: string): PendingEdit10 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_10.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 10`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_11.ts
+```ts
+export type PendingEdit11 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit11(input: string): PendingEdit11 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_11.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 11`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_12.ts
+```ts
+export type PendingEdit12 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit12(input: string): PendingEdit12 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_12.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 12`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_13.ts
+```ts
+export type PendingEdit13 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit13(input: string): PendingEdit13 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_13.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 13`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_14.ts
+```ts
+export type PendingEdit14 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit14(input: string): PendingEdit14 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_14.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 14`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_15.ts
+```ts
+export type PendingEdit15 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit15(input: string): PendingEdit15 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_15.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 15`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_16.ts
+```ts
+export type PendingEdit16 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit16(input: string): PendingEdit16 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_16.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 16`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_17.ts
+```ts
+export type PendingEdit17 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit17(input: string): PendingEdit17 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_17.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 17`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_18.ts
+```ts
+export type PendingEdit18 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit18(input: string): PendingEdit18 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_18.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 18`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+### Repository snapshot shard
+Path: src/session_orchestrator_19.ts
+```ts
+export type PendingEdit19 = {
+  file: string;
+  reason: string;
+  oldText: string;
+  newText: string;
+};
+
+export function planEdit19(input: string): PendingEdit19 {
+  const normalized = input.trim().replace(/\s+/g, " ");
+  return {
+    file: "src/session_orchestrator_19.ts",
+    reason: "Keep cache-aware coding benchmark realistic while preserving a large stable prefix.",
+    oldText: normalized.slice(0, 96),
+    newText: `${normalized} :: reviewed in shard 19`
+  };
+}
+```
+Notes: this shard appears in the stable project context. It describes code, tests, and constraints that remain mostly unchanged across follow-up turns.
+
+\nUser turn 1:\nWe are optimizing llama.cpp for MiniMax-M2.7 on mixed CUDA and ROCm. Review this current stage and propose the next safe code change.\n\n#### Follow-up changed suffix shard 1.0
+The user is iterating on a real coding task. Inspect the patch below, explain the bug risk, and propose the smallest safe edit.
+
+```diff
+diff --git a/src/cache_session_1_0.ts b/src/cache_session_1_0.ts
+@@
+-export const reuseWindow = 128;
++export const reuseWindow = 256;
+ export function shouldReusePrefix(commonPrefixTokens: number, promptTokens: number): boolean {
+-  return commonPrefixTokens > promptTokens * 0.50;
++  return commonPrefixTokens > promptTokens * 0.82;
+ }
+```
+
+Acceptance notes: preserve deterministic output, avoid CPU fallback, keep prompt-cache reuse visible, and record context depth.
+
+#### Follow-up changed suffix shard 1.1
+The user is iterating on a real coding task. Inspect the patch below, explain the bug risk, and propose the smallest safe edit.
+
+```diff
+diff --git a/src/cache_session_1_1.ts b/src/cache_session_1_1.ts
+@@
+-export const reuseWindow = 129;
++export const reuseWindow = 257;
+ export function shouldReusePrefix(commonPrefixTokens: number, promptTokens: number): boolean {
+-  return commonPrefixTokens > promptTokens * 0.50;
++  return commonPrefixTokens > promptTokens * 0.82;
+ }
+```
+
+Acceptance notes: preserve deterministic output, avoid CPU fallback, keep prompt-cache reuse visible, and record context depth.
+
+#### Follow-up changed suffix shard 1.2
+The user is iterating on a real coding task. Inspect the patch below, explain the bug risk, and propose the smallest safe edit.
+
+```diff
+diff --git a/src/cache_session_1_2.ts b/src/cache_session_1_2.ts
+@@
+-export const reuseWindow = 130;
++export const reuseWindow = 258;
+ export function shouldReusePrefix(commonPrefixTokens: number, promptTokens: number): boolean {
+-  return commonPrefixTokens > promptTokens * 0.50;
++  return commonPrefixTokens > promptTokens * 0.82;
+ }
+```
+
+Acceptance notes: preserve deterministic output, avoid CPU fallback, keep prompt-cache reuse visible, and record context depth.
+
+#### Follow-up changed suffix shard 1.3
+The user is iterating on a real coding task. Inspect the patch below, explain the bug risk, and propose the smallest safe edit.
+
+```diff
+diff --git a/src/cache_session_1_3.ts b/src/cache_session_1_3.ts
+@@
+-export const reuseWindow = 131;
++export const reuseWindow = 259;
+ export function shouldReusePrefix(commonPrefixTokens: number, promptTokens: number): boolean {
+-  return commonPrefixTokens > promptTokens * 0.50;
++  return commonPrefixTokens > promptTokens * 0.82;
+ }
+```
+
+Acceptance notes: preserve deterministic output, avoid CPU fallback, keep prompt-cache reuse visible, and record context depth.
+
+#### Follow-up changed suffix shard 1.4
+The user is iterating on a real coding task. Inspect the patch below, explain the bug risk, and propose the smallest safe edit.
+
+```diff
+diff --git a/src/cache_session_1_4.ts b/src/cache_session_1_4.ts
+@@
+-export const reuseWindow = 132;
++export const reuseWindow = 260;
+ export function shouldReusePrefix(commonPrefixTokens: number, promptTokens: number): boolean {
+-  return commonPrefixTokens > promptTokens * 0.50;
++  return commonPrefixTokens > promptTokens * 0.82;
+ }
+```
+
+Acceptance notes: preserve deterministic output, avoid CPU fallback, keep prompt-cache reuse visible, and record context depth.
+
+#### Follow-up changed suffix shard 1.5
+The user is iterating on a real coding task. Inspect the patch below, explain the bug risk, and propose the smallest safe edit.
+
+```diff
+diff --git a/src/cache_session_1_5.ts b/src/cache_session_1_5.ts
+@@
+-export const reuseWindow = 133;
++export const reuseWindow = 261;
+ export function shouldReusePrefix(commonPrefixTokens: number, promptTokens: number): boolean {
+-  return commonPrefixTokens > promptTokens * 0.50;
++  return commonPrefixTokens > promptTokens * 0.82;
+ }
+```
+
+Acceptance notes: preserve deterministic output, avoid CPU fallback, keep prompt-cache reuse visible, and record context depth.
+
+#### Follow-up changed suffix shard 1.6
+The user is iterating on a real coding task. Inspect the patch below, explain the bug risk, and propose the smallest safe edit.
+
+```diff
+diff --git a/src/cache_session_1_6.ts b/src/cache_session_1_6.ts
+@@
+-export const reuseWindow = 134;
++export const reuseWindow = 262;
+ export function shouldReusePrefix(commonPrefixTokens: number, promptTokens: number): boolean {
+-  return commonPrefixTokens > promptTokens * 0.50;
++  return commonPrefixTokens > promptTokens * 0.82;
+ }
+```
+
+Acceptance notes: preserve deterministic output, avoid CPU fallback, keep prompt-cache reuse visible, and record context depth.
+
+#### Follow-up changed suffix shard 1.7
+The user is iterating on a real coding task. Inspect the patch below, explain the bug risk, and propose the smallest safe edit.
+
+```diff
+diff --git a/src/cache_session_1_7.ts b/src/cache_session_1_7.ts
+@@
+-export const reuseWindow = 135;
++export const reuseWindow = 263;
+ export function shouldReusePrefix(commonPrefixTokens: number, promptTokens: number): boolean {
+-  return commonPrefixTokens > promptTokens * 0.50;
++  return commonPrefixTokens > promptTokens * 0.82;
+ }
+```
+
+Acceptance notes: preserve deterministic output, avoid CPU fallback, keep prompt-cache reuse visible, and record context depth.
+
+#### Follow-up changed suffix shard 1.8
+The user is iterating on a real coding task. Inspect the patch below, explain the bug risk, and propose the smallest safe edit.
+
+```diff
+diff --git a/src/cache_session_1_8.ts b/src/cache_session_1_8.ts
+@@
+-export const reuseWindow = 136;
++export const reuseWindow = 264;
+ export function shouldReusePrefix(commonPrefixTokens: number, promptTokens: number): boolean {
+-  return commonPrefixTokens > promptTokens * 0.50;
++  return commonPrefixTokens > promptTokens * 0.82;
+ }
+```
+
+Acceptance notes: preserve deterministic output, avoid CPU fallback, keep prompt-cache reuse visible, and record context depth.
+
+#### Follow-up changed suffix shard 1.9
+The user is iterating on a real coding task. Inspect the patch below, explain the bug risk, and propose the smallest safe edit.
+
+```diff
+diff --git a/src/cache_session_1_9.ts b/src/cache_session_1_9.ts
+@@
+-export const reuseWindow = 137;
++export const reuseWindow = 265;
+ export function shouldReusePrefix(commonPrefixTokens: number, promptTokens: number): boolean {
+-  return commonPrefixTokens > promptTokens * 0.50;
++  return commonPrefixTokens > promptTokens * 0.82;
+ }
+```
+
+Acceptance notes: preserve deterministic output, avoid CPU fallback, keep prompt-cache reuse visible, and record context depth.
+
+\nAssistant:\n

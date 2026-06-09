@@ -1,0 +1,26 @@
+{
+  "results_tsv": "/home/stefan/llama.cpp-gfx906/bench-results/minimax-cache-session-fattn-cuda-rr-20260606T043146Z/results.tsv",
+  "server_log": "/home/stefan/llama.cpp-gfx906/bench-results/minimax-cache-session-fattn-cuda-rr-20260606T043146Z/server.log",
+  "turns_ok": 2,
+  "primary_cached_turns": 1,
+  "max_context_tokens": 45811,
+  "ctx_limit": 69376,
+  "ctx_fill_ratio": 0.6603292204797048,
+  "aggregate_cached_turns": {
+    "cache_tokens": 34449,
+    "processed_prompt_tokens": 11266,
+    "predicted_tokens": 96,
+    "cache_ratio": 0.7535601006234277,
+    "processed_pp": 255.317006113716,
+    "effective_context_pp": 1036.0213859833593,
+    "tg": 3.40539636844984,
+    "prompt_ms": 44125.537,
+    "predicted_ms": 28190.551
+  },
+  "reuse_log_evidence": {
+    "f_keep_sim_pairs": [],
+    "prompt_cache_saves": 0,
+    "prompt_cache_load_or_better_prompt_events": 0,
+    "checkpoint_restores": 0
+  }
+}
