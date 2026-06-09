@@ -12,6 +12,14 @@ This repo is not a clean product branch. It is a research package for continuing
 - the modified source snapshot
 - the benchmark and helper scripts used during the investigation
 
+## Tested Hardware
+
+The research in this repo was run on a mixed host with:
+
+- `2x NVIDIA RTX 3090` linked with `NVLink`
+- `2x NVIDIA RTX 5070 Ti`
+- `2x AMD MI50 32 GiB`
+
 ## Current Status
 
 - Local throughput work is wrapped for this cycle.
