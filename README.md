@@ -20,6 +20,7 @@ This repo is not a clean product branch. It is a research package for continuing
 
 Authoritative summary docs:
 
+- [CONTINUATION_LEADS.md](CONTINUATION_LEADS.md)
 - [RELEASE_NOTES.md](RELEASE_NOTES.md)
 - [docs/minimax-optimization-report.md](docs/minimax-optimization-report.md)
 - [docs/minimax-external-ai-prompt.md](docs/minimax-external-ai-prompt.md)
