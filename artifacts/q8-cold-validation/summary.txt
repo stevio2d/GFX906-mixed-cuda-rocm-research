@@ -1,0 +1,7 @@
+MiniMax Q8 KV cold validation summary
+prompt_n: 11521
+predicted_n: 128
+prompt_per_second: 309.394175
+predicted_per_second: 30.657956
+cache_n: 0
+tokens_cached: 11648

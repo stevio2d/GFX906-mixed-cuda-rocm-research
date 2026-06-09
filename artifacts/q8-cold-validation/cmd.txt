@@ -1,0 +1,1 @@
+PORT=21921 /home/stefan/llama.cpp-gfx906/scripts/bench-minimax-q8-best-cold.sh

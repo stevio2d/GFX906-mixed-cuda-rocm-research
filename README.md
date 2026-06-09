@@ -24,6 +24,7 @@ Authoritative summary docs:
 - [docs/minimax-optimization-report.md](docs/minimax-optimization-report.md)
 - [docs/minimax-external-ai-prompt.md](docs/minimax-external-ai-prompt.md)
 - [docs/plan-cuda+8channelram.md](docs/plan-cuda+8channelram.md)
+- [docs/q8-kv-validation-2026-06-09.md](docs/q8-kv-validation-2026-06-09.md)
 
 ## Best Commands
 
@@ -66,6 +67,23 @@ Runnable reference:
 
 - [commands/best-cache-session.sh](commands/best-cache-session.sh)
 - required ROCm env helper: [commands/env-rocm-gfx906.sh](commands/env-rocm-gfx906.sh)
+
+### Q8 KV validated server
+
+Follow-up Q8 KV validation was completed after the main handoff.
+
+Key result:
+
+- full context `69376`
+- `q8_0` KV
+- tested cold run at `309.394175 PP / 30.657956 TG`
+- tested two-turn cache smoke with real reuse
+
+Reference docs and scripts:
+
+- [docs/q8-kv-validation-2026-06-09.md](docs/q8-kv-validation-2026-06-09.md)
+- [scripts/run-minimax-q8-opencode.sh](scripts/run-minimax-q8-opencode.sh)
+- [scripts/bench-minimax-q8-best-cold.sh](scripts/bench-minimax-q8-best-cold.sh)
 
 ### Best controlled exact Stage 5 fixture
 
