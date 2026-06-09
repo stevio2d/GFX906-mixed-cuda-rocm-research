@@ -5,6 +5,7 @@ ROOT=${ROOT:-/home/stefan/llama.cpp-gfx906}
 BIN=${BIN:-$ROOT/build-cuda-hip-dl-gfx906/bin/llama-server}
 MODEL=${MODEL:-/home/stefan/.lmstudio/models/unsloth/MiniMax-M2.7-GGUF/MiniMax-M2.7-UD-Q4_K_S-00001-of-00004.gguf}
 PORT=${PORT:-21940}
+HOST=${HOST:-0.0.0.0}
 
 export PATH=/opt/rocm/bin:${PATH:-}
 export HSA_OVERRIDE_GFX_VERSION=${HSA_OVERRIDE_GFX_VERSION:-9.0.6}
@@ -40,5 +41,5 @@ exec "$BIN" \
   --output-device CUDA3 \
   --cache-prompt \
   --cache-ram 32768 \
-  --host 127.0.0.1 \
+  --host "$HOST" \
   --port "$PORT"
