@@ -37,6 +37,14 @@ Authoritative summary docs:
 
 ## Best Commands
 
+### Quick Comparison
+
+| Case | KV | Placement | Extra routing / notes | Best validated result |
+| --- | --- | --- | --- | --- |
+| Highest cold PP | `q4_0` | manual `--layer-split 14,12,7,11,11,7` on `ROCm1,ROCm0,CUDA3,CUDA1,CUDA0,CUDA2` | static layer placement, CUDA `q4_0` direct MMA, fixed FA env (`Q=321`) | `558.7603 PP / 31.2581 TG` |
+| Highest real cache-session PP | `q4_0` | same manual `14,12,7,11,11,7` split | prompt cache on, `--minimax-fattn-devices CUDA3,CUDA1,CUDA0,CUDA2` | cached follow-up `255.317006 PP`, `1036.021386 effective_context_pp`, `3.405396 TG` |
+| Validated Q8 KV server | `q8_0` | `--placement-policy balanced` on `ROCm1,ROCm0,CUDA3,CUDA1,CUDA0,CUDA2` | stable full-ctx server, no FA reroute override, portable FA env | cold `309.394175 PP / 30.657956 TG`, cache smoke turn 2 `216.089474 PP` |
+
 ### Highest cold PP
 
 Result:
